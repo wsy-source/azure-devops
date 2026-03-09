@@ -48,6 +48,8 @@ jobs:
           role-session-name: GitHubActionsDeploy
           oidc-provider-arn: acs:ram::1213354879732834:oidc-provider/github-actions-oidc
           role-to-assume: acs:ram::1213354879732834:role/github-deploy-role
+          audience: sts.aliyuncs.com
+          region: cn-hangzhou
 
       - name: Print STS Token Details (DEBUG ONLY)
         run: |
