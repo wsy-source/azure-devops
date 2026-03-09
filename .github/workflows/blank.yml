@@ -33,7 +33,7 @@ jobs:
         run: echo Hello, world!
         
       - name: "Setup Aliyun CLI" 
-        uses: aliyun/setup-aliyun-cli-action@v1
+        uses: aliyun/configure-aliyun-credentials-action@v1.0.7
         with:
           role-session-name: GitHubActionsDeploy
           oidc-provider-arn: acs:ram::1213354879732834:oidc-provider/github-actions-oidc
