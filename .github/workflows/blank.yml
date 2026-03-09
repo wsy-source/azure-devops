@@ -31,7 +31,17 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-        
+
+      - name: Print OIDC Token Payload (DEBUG)
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const token = await core.getIDToken('sts.aliyuncs.com');
+            const payload = token.split('.')[1];
+            const decoded = Buffer.from(payload, 'base64').toString('utf-8');
+            console.log("GitHub 发送给阿里云的真实凭证内容：");
+            console.log(JSON.parse(decoded));
+      
       - name: "Setup Aliyun CLI" 
         uses: aliyun/configure-aliyun-credentials-action@v1.0.7
         with:
