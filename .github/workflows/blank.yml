@@ -19,6 +19,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    environment: dev
     permissions: 
       id-token: write
       contents: read
@@ -47,7 +48,7 @@ jobs:
         with:
           role-session-name: GitHubActionsDeploy
           oidc-provider-arn: acs:ram::1213354879732834:oidc-provider/github-actions-oidc
-          role-to-assume: acs:ram::1213354879732834:role/github-deploy-role
+          role-to-assume: ${{ secrets.ROLE_ARN }}
           audience: sts.aliyuncs.com
       - name: Install Aliyun CLI
         uses: aliyun/setup-aliyun-cli-action@v1
