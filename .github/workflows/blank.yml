@@ -43,9 +43,6 @@ jobs:
         run: |
           echo "=== 阿里云 STS 临时凭证开始 ==="
           echo "AccessKeyId: $ALIBABA_CLOUD_ACCESS_KEY_ID"
-          echo "AccessKeySecret: $ALIBABA_CLOUD_ACCESS_KEY_SECRET"
-          echo "SecurityToken (STS Token): $ALIBABA_CLOUD_SECURITY_TOKEN"
-          echo "=== 阿里云 STS 临时凭证结束 ==="
           
           # 验证当前身份
           echo "验证当前身份信息："
