@@ -35,10 +35,9 @@ jobs:
       - name: "Setup Aliyun CLI" 
         uses: aliyun/setup-aliyun-cli-action@v1
         with:
-          version:
-            role-arn: acs:ram::1213354879732834:role/github-deploy-role
-            role-session-name: GitHubActionsDeploy
-            region: cn-hangzhou
+          ram-role-arn: acs:ram::1213354879732834:role/github-deploy-role
+          role-session-name: GitHubActionsDeploy
+          region: cn-hangzhou
           
       - name: Print STS Token Details (DEBUG ONLY)
         run: |
