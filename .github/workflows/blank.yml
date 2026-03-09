@@ -37,8 +37,7 @@ jobs:
         with:
           role-session-name: GitHubActionsDeploy
           oidc-provider-arn: acs:ram::1213354879732834:oidc-provider/github-actions-oidc
-          role-to-assume: acs:ram::1213354879732834:role/GitHub-Deploy-Role
-          audience: sts.aliyuncs.com
+          role-to-assume: acs:ram::1213354879732834:role/github-deploy-role
 
       - name: Print STS Token Details (DEBUG ONLY)
         run: |
