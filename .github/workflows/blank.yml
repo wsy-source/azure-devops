@@ -36,10 +36,9 @@ jobs:
         uses: aliyun/setup-aliyun-cli-action@v1
         with:
           model: OIDC
-          ram-role-arn: acs:ram::1213354879732834:role/github-deploy-role
+          role-arn: acs:ram::1213354879732834:role/github-deploy-role
           role-session-name: GitHubActionsDeploy
-          region: cn-hangzhou
-          
+        
       - name: Print STS Token Details (DEBUG ONLY)
         run: |
           echo "=== 阿里云 STS 临时凭证开始 ==="
