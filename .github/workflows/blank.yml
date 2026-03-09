@@ -55,6 +55,8 @@ jobs:
           version: 'latest'
           
       - name: Print STS Token Details (DEBUG ONLY)
+        env:
+          ALIBABA_CLOUD_REGION_ID: cn-hangzhou 
         run: |
           echo "=== 阿里云 STS 临时凭证开始 ==="
           echo "AccessKeyId: $ALIBABA_CLOUD_ACCESS_KEY_ID"
